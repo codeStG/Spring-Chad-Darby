@@ -11,8 +11,21 @@
 		class="com.stgcodes.springdemo.HappyFortuneService">
 	</bean>
 
-	<bean id="coach" class="com.stgcodes.springdemo.BasketballCoach">
+	<bean id="coach" 
+		class="com.stgcodes.springdemo.BaseballCoach">
+		<!-- This constructor-arg attribute is used for constructor injection -->
 		<constructor-arg ref="fortune" />
+	</bean>
+
+	<bean id="basketballCoach"
+		class="com.stgcodes.springdemo.BasketballCoach">
+		
+		<!-- These property attributes are used for setter injection -->
+		<property name="fortuneService" ref="fortune" />
+		
+		<property name="emailAddress" value="basketballcoach@stgcodes.com" />
+		
+		<property name="team" value="Dallas Devs" />
 	</bean>
 
 </beans>
