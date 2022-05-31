@@ -6,6 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+    
+    <context:property-placeholder location="classpath:sport.properties"/>
 
 	<bean id="fortune"
 		class="com.stgcodes.springdemo.HappyFortuneService">
@@ -23,9 +25,9 @@
 		<!-- These property attributes are used for setter injection -->
 		<property name="fortuneService" ref="fortune" />
 		
-		<property name="emailAddress" value="basketballcoach@stgcodes.com" />
+		<property name="emailAddress" value="${coach.email}" />
 		
-		<property name="team" value="Dallas Devs" />
+		<property name="team" value="${coach.team}" />
 	</bean>
 
 </beans>
