@@ -7,6 +7,7 @@ public class BasketballCoach implements Coach {
 	
 	private String emailAddress;
 	private String team;
+	private String fortunes;
 
 	//define a constructor for dependency injection
 	public BasketballCoach() {
@@ -18,6 +19,10 @@ public class BasketballCoach implements Coach {
 
 	public String getTeam() {
 		return team;
+	}
+
+	public String getFortunes() {
+		return fortunes;
 	}
 
 	@Override
@@ -38,6 +43,10 @@ public class BasketballCoach implements Coach {
 		this.team = team;
 	}
 
+	public void setFortunes(String fortunes) {
+		this.fortunes = fortunes;
+	}
+	
 	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}

@@ -12,6 +12,10 @@
 	<bean id="fortune"
 		class="com.stgcodes.springdemo.HappyFortuneService">
 	</bean>
+	
+	<bean id="randomFortune"
+		class="com.stgcodes.springdemo.RandomFortuneService">
+	</bean>
 
 	<bean id="coach" 
 		class="com.stgcodes.springdemo.BaseballCoach">
@@ -23,7 +27,7 @@
 		class="com.stgcodes.springdemo.BasketballCoach">
 		
 		<!-- These property attributes are used for setter injection -->
-		<property name="fortuneService" ref="fortune" />
+		<property name="fortuneService" ref="randomFortune" />
 		
 		<property name="emailAddress" value="${coach.email}" />
 		
