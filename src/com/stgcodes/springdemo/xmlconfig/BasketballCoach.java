@@ -1,4 +1,4 @@
-package com.stgcodes.springdemo;
+package com.stgcodes.springdemo.xmlconfig;
 
 public class BasketballCoach implements Coach {
 	

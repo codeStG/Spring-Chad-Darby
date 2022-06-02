@@ -1,4 +1,4 @@
-package com.stgcodes.springdemo;
+package com.stgcodes.springdemo.xmlconfig;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,7 +7,7 @@ public class BeanScopeDemoApp {
 	public static void main(String[] args) {
 		
 		//load the Spring config file
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/stgcodes/springdemo/xmlconfig/config/beanScope-applicationContext.xml");
 		
 		//retrieve Bean from Spring Container
 		Coach coach = context.getBean("coach", Coach.class);

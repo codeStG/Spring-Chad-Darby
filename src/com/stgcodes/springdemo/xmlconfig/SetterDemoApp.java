@@ -1,4 +1,4 @@
-package com.stgcodes.springdemo;
+package com.stgcodes.springdemo.xmlconfig;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -6,7 +6,7 @@ public class SetterDemoApp {
 
 	public static void main(String[] args) {
 		//load the Spring configuration file
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/stgcodes/springdemo/xmlconfig/config/applicationContext.xml");
 		
 		//retrieve the Bean from the Spring Container
 		BasketballCoach coach = context.getBean("basketballCoach", BasketballCoach.class);

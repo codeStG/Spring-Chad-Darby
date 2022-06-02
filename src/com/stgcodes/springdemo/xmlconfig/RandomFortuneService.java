@@ -1,4 +1,4 @@
-package com.stgcodes.springdemo;
+package com.stgcodes.springdemo.xmlconfig;
 
 import java.util.ArrayList;
 import java.util.Random;
