@@ -7,9 +7,12 @@ public class AnnotationDemoApp {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/stgcodes/springdemo/annotationsconfig/config/applicationContext.xml");
 		
-		Coach coach = context.getBean("coach", Coach.class);
+		Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
 		
-		System.out.println(coach.getDailyWorkout());
+		Coach gymnasticsCoach = context.getBean("gymnasticsCoach", Coach.class);
+		
+		System.out.println(tennisCoach.getDailyWorkout());
+		System.out.println(gymnasticsCoach.getDailyWorkout());
 		
 		context.close();
 	}

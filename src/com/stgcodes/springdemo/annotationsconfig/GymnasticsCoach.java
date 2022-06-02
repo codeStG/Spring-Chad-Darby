@@ -3,11 +3,11 @@ package com.stgcodes.springdemo.annotationsconfig;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach {
+public class GymnasticsCoach implements Coach {
 
 	@Override
 	public String getDailyWorkout() {
-		return "Practice your backhand volley";
+		return "Do 20 somersaults";
 	}
 
 }
