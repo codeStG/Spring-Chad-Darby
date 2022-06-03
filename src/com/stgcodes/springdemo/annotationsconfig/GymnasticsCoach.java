@@ -2,12 +2,19 @@ package com.stgcodes.springdemo.annotationsconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GymnasticsCoach implements Coach {
 	
 	private FortuneService fortuneService;
+	
+	@Value("${coach.email}")
+	private String email;
+	
+	@Value("${coach.team}")
+	private String team;
 	
 	@Autowired
 	public GymnasticsCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
@@ -24,4 +31,11 @@ public class GymnasticsCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
 }

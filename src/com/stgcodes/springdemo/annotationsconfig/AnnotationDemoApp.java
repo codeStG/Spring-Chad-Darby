@@ -9,13 +9,15 @@ public class AnnotationDemoApp {
 		
 		Coach tennisCoach = context.getBean("tennisCoach", Coach.class);
 		
-		Coach gymnasticsCoach = context.getBean("gymnasticsCoach", Coach.class);
+		GymnasticsCoach gymnasticsCoach = context.getBean("gymnasticsCoach", GymnasticsCoach.class);
 		
 		System.out.println(tennisCoach.getDailyWorkout());
 		System.out.println(tennisCoach.getDailyFortune());
 		
 		System.out.println(gymnasticsCoach.getDailyWorkout());
 		System.out.println(gymnasticsCoach.getDailyFortune());
+		System.out.println(gymnasticsCoach.getEmail());
+		System.out.println(gymnasticsCoach.getTeam());
 		
 		context.close();
 	}
