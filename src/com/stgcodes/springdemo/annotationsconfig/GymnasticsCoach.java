@@ -1,6 +1,7 @@
 package com.stgcodes.springdemo.annotationsconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,7 +10,7 @@ public class GymnasticsCoach implements Coach {
 	private FortuneService fortuneService;
 	
 	@Autowired
-	public GymnasticsCoach(FortuneService fortuneService) {
+	public GymnasticsCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 
