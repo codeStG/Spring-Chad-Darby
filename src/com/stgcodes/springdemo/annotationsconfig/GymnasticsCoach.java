@@ -17,7 +17,7 @@ public class GymnasticsCoach implements Coach {
 	private String team;
 	
 	@Autowired
-	public GymnasticsCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+	public GymnasticsCoach(@Qualifier("fileFortuneService") FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
 
