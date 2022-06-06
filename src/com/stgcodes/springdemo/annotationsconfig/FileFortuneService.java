@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,7 +24,7 @@ public class FileFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
-		ArrayList<String> fortunes = getArrayListFromFile();
+		readFortunesFromFile();
 		
 		if(fortunes.size() <= 0) {
 			return "There was a problem reading the provided file. Please try again.";
@@ -31,8 +33,9 @@ public class FileFortuneService implements FortuneService {
 		String fortune = getRandomFortuneFromList(fortunes);
 		return fortune;
 	}
-
-	private ArrayList<String> getArrayListFromFile() {
+	
+	@PostConstruct
+	private void readFortunesFromFile() {
 		try {
 			scanner = new Scanner(fortunesFile).useDelimiter(",");
 			
@@ -44,8 +47,6 @@ public class FileFortuneService implements FortuneService {
 		} finally {
 			scanner.close();
 		}
-		
-		return fortunes;
 	}
 	
 	private String getRandomFortuneFromList(ArrayList<String> fortunes) {

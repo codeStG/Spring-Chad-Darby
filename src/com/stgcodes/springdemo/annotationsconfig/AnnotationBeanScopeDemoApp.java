@@ -9,6 +9,7 @@ public class AnnotationBeanScopeDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/stgcodes/springdemo/annotationsconfig/config/applicationContext.xml"); 
 		
 		//retrieve bean from spring container
+		//Tennis coach @Scope must be set for this to work properly
 		Coach coach = context.getBean("tennisCoach", Coach.class);
 		
 		Coach coachTwo = context.getBean("tennisCoach", Coach.class);
