@@ -1,12 +1,13 @@
 package com.stgcodes.springdemo.annotationsconfig;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -25,10 +26,14 @@ public class TennisCoach implements Coach {
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
-
-	//setter injection example
-//	@Autowired
-//	public void triggerDependencyInjection(FortuneService fortuneService) {
-//		this.fortuneService = fortuneService;
-//	}
+	
+	@PostConstruct
+	public void initializeBean() {
+		System.out.println("TennisCoach: inside initializeBean() method");
+	}
+	
+	@PreDestroy
+	public void destroyBean() {
+		System.out.println("TennisCoach: inside destroyBean() method");
+	}
 }
